@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_winner():
     
     arg1 = request.args.get('name', '')
-    return arg1
+    return str(arg1)
 
     response = requests.get('https://kahoot.it/rest/challenges/' + id + '/progress')
     challenge = json.loads(response.text)
