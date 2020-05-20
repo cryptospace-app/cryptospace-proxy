@@ -7,7 +7,10 @@ app = Flask(__name__)
 @app.route('/winner-of')
 def get_winner():
     challengeId = request.args.get('id')
+    return challengeId
+    
     response = requests.get('https://kahoot.it/rest/challenges/' + challengeId + '/progress')
+    
     challenge = json.loads(response.text)
     leaders = challenge['leaderboard']['leaders']
     if len(leaders) > 0:
