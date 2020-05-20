@@ -4,8 +4,9 @@ import requests
 
 app = Flask(__name__)
     
-@app.route('/winner-of/<string:id>')
-def get_winner(id):
+@app.route('/winner-of')
+def get_winner():
+    user = request.args.get('id')
     response = requests.get('https://kahoot.it/rest/challenges/' + id + '/progress')
     challenge = json.loads(response.text)
     leaders = challenge['leaderboard']['leaders']
