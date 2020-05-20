@@ -4,8 +4,8 @@ import requests
 
 app = Flask(__name__)
     
-@app.route('/winner-of/<string:id>')
-def get_winner(id):
+@app.route('/winner-of')
+def get_winner():
     
     arg1 = request.args.get('name', '')
     return arg1
