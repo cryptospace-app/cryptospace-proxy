@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
     
-@app.route('/winner-of')
+@app.route('/', methods=['GET'])
 def get_winner():
     
     arg1 = request.args.get('name', '')
