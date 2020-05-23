@@ -23,7 +23,7 @@ def get_winner():
     playerNamesSet = set(playerNames)
     argNamesSet = set(argNames)
     if hasMultipleGamesPlayed or (len(playerNamesSet.difference(argNames)) > 0):
-    	return ""
+    	return '""'
     if hasUnfinished or (len(argNamesSet) != len(playerNamesSet)):
     	abort(400)
 
