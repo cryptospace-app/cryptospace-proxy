@@ -29,6 +29,6 @@ def get_winner():
 
     leaders = challenge['leaderboard']['leaders']
     if len(leaders) > 0:
-        return '"' + leaders[0]['playerId'] + '"'
+        return ('"' + leaders[0]['playerId'] + '"').lower()
     else:
         abort(400)
